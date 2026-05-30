@@ -75,6 +75,8 @@ read -r temp humidity <<< $(curl -s wttr.in/${CITY}?format=j1 | jq -r '.current_
     echo "Date: $(date)</p>"
 } > ${FILE}
 ```
+<img width="624" height="211" alt="image" src="https://github.com/user-attachments/assets/4c238efc-394c-4602-aba7-aa2074f3c140" />
+
 
 
 ### 6. Добавляем в планировщик
@@ -93,5 +95,7 @@ Humidity: 50<br>
 Date: Sat May 30 01:07:01 PM UTC 2026</p>
 ```
 
-### 8. Проверяем веб-страницу
+### 8. Проверяем вывод скрипта и срабатывает ли он каждую минуту
+<img width="292" height="209" alt="image" src="https://github.com/user-attachments/assets/277b3471-c776-4708-97df-325be312deb6" />
+<img width="290" height="210" alt="image" src="https://github.com/user-attachments/assets/d05a0d48-f6d1-4638-94c4-773c332cfc43" />
 
