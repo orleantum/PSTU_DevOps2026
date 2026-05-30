@@ -1,5 +1,5 @@
 # Файлы:
-### Weather_script.pdf - отчёт
+### Weather_script.pdf - отчёт о проделанной работе
 ### Weather_script.sh - скрипт
 
 # Отчёт о работе
@@ -12,10 +12,11 @@ sudo apt install nginx
 ```
 
 
-### 3. Делаем проброс порта с хостовой системы в гостевую (8080 > 80)
+### 2. Делаем проброс порта с хостовой системы в гостевую (8080 > 80)
+<img width="624" height="143" alt="image" src="https://github.com/user-attachments/assets/6386842a-f101-4900-a185-9a22e99c0193" />
 
 
-## 4. Проверяем
+### 3. Проверяем
 
 ```Bash
 iadiyanov@iadiyanov:~$ curl 127.0.0.1
@@ -45,7 +46,7 @@ Commercial support is available at
 ```
 
 
-## 5. Изменяем права на файл /var/www/html/index.nginx-debian.html
+### 4. Изменяем права на файл /var/www/html/index.nginx-debian.html
 
 ```Bash
 iadiyanov@iadiyanov:~$ sudo chmod a+w /var/www/html/index.nginx-debian.html 
@@ -55,7 +56,7 @@ total 4
 ```
 
 
-## 6. Пишем скрипт
+### 5. Пишем скрипт
 
 ```Bash
 #!/bin/bash
@@ -76,10 +77,21 @@ read -r temp humidity <<< $(curl -s wttr.in/${CITY}?format=j1 | jq -r '.current_
 ```
 
 
-## 7. Добавляем в планировщик
+### 6. Добавляем в планировщик
 
 ```Bash
 crontab -e
 
 * * * * * /home/iadiyanov/Weather_script.sh
 ```
+
+### 7. Смотрим index.html
+```Bash
+<h1>Weather Perm</h1>
+<p>Temperature: 17<br>
+Humidity: 50<br>
+Date: Sat May 30 01:07:01 PM UTC 2026</p>
+```
+
+### 8. Проверяем веб-страницу
+
