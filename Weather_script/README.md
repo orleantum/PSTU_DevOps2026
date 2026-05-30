@@ -3,24 +3,24 @@
 
 # Отчёт о работе
 
-# 1. Устанавливаем веб-сервер
+## 1. Устанавливаем веб-сервер
 
 ```Bash
 sudo apt update sudo apt install nginx
 ```
 
 
-# 2. Проверяем, что сервер заработал
+## 2. Проверяем, что сервер заработал
 
 ```Bash
 curl 127.0.0.1
 ```
 
 
-# 3. Делаем проброс порта с хостовой системы в гостевую (8080 > 80)
+## 3. Делаем проброс порта с хостовой системы в гостевую (8080 > 80)
 
 
-# 4. Проверяем
+## 4. Проверяем
 
 ```Bash
 iadiyanov@iadiyanov:~$ curl 127.0.0.1
@@ -50,7 +50,7 @@ Commercial support is available at
 ```
 
 
-# 5. Изменяем права на файл /var/www/html/index.nginx-debian.html
+## 5. Изменяем права на файл /var/www/html/index.nginx-debian.html
 
 ```Bash
 iadiyanov@iadiyanov:~$ sudo chmod a+w /var/www/html/index.nginx-debian.html 
@@ -60,7 +60,7 @@ total 4
 ```
 
 
-# 6. Пишем скрипт
+## 6. Пишем скрипт
 
 ```Bash
 nano Weather_script.sh
@@ -75,7 +75,7 @@ date >> $FILE
 ```
 
 
-# 7. Добавляем в планировщик
+## 7. Добавляем в планировщик
 
 ```Bash
 crontab -e
