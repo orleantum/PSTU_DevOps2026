@@ -63,15 +63,21 @@ total 4
 ## 6. Пишем скрипт
 
 ```Bash
-nano Weather_script.sh
-
 #!/bin/bash
 
 FILE="/var/www/html/index.nginx-debian.html"
 
-curl -s wttr.in/Perm?format=j1 | jq '.["current_condition"][0] | .temp_C,.humidity' > $FILE
+CITY="Perm"
 
-date >> $FILE
+read -r temp humidity <<< $(curl -s wttr.in/${CITY}?format=j1 | jq -r '.current_condition[0] | "\(.temp_C) \(.humidity)"')
+
+
+{
+    echo "<h1>Weather ${CITY}</h1>"
+    echo "<p>Temperature: ${temp}<br>"
+    echo "Humidity: ${humidity}<br>"
+    echo "Date: $(date)</p>"
+} > ${FILE}
 ```
 
 
